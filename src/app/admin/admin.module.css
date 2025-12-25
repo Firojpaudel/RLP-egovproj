@@ -107,6 +107,12 @@
     color: #dc2626;
 }
 
+@media (max-width: 768px) {
+    .actionButtons {
+        flex-direction: column;
+    }
+}
+
 .actionButtons {
     display: flex;
     gap: 12px;

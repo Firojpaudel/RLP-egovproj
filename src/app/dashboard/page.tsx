@@ -92,9 +92,9 @@ export default function DashboardPage() {
                 </div>
             </div>
 
-            <div className="dashboard-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(12, 1fr)', gap: '24px', alignItems: 'start' }}>
+            <div className={styles.dashboardGrid}>
                 {/* 1. Profile Overview (Spans 4 columns on large, 12 on small) */}
-                <div className="apple-card" style={{ gridColumn: 'span 4', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', height: '100%' }}>
+                <div className={`${styles.card} ${styles.colSpan4} apple-card`} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', height: '100%' }}>
                     <div style={{ width: '80px', height: '80px', background: '#f5f5f7', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#1d1d1f', marginBottom: '16px' }}>
                         <User size={32} />
                     </div>
@@ -115,7 +115,7 @@ export default function DashboardPage() {
                 </div>
 
                 {/* 2. License Management & Actions (Spans 8 columns) */}
-                <div style={{ gridColumn: 'span 8', display: 'flex', flexDirection: 'column', gap: '24px' }}>
+                <div className={styles.colSpan8} style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
                     {/* License List */}
                     <div className="apple-card" style={{ display: 'flex', flexDirection: 'column' }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
@@ -193,7 +193,7 @@ export default function DashboardPage() {
                 </div>
 
                 {/* 4. Application History (Spans 12 columns - Full Width) */}
-                <div className="apple-card" style={{ gridColumn: 'span 12', padding: '0', overflow: 'hidden', marginTop: '16px' }}>
+                <div className={`${styles.colSpan12} apple-card`} style={{ padding: '0', overflow: 'hidden', marginTop: '16px' }}>
                     <div style={{ padding: '24px 30px', borderBottom: '1px solid var(--color-border)' }}>
                         <h3 className="title-small">Application History</h3>
                     </div>

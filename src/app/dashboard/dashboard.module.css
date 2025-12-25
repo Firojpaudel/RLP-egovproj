@@ -62,3 +62,45 @@
         gap: 16px;
     }
 }
+
+.dashboardGrid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+    align-items: start;
+}
+
+.colSpan4 {
+    grid-column: span 4;
+}
+
+.colSpan8 {
+    grid-column: span 8;
+}
+
+.colSpan12 {
+    grid-column: span 12;
+}
+
+@media (max-width: 1024px) {
+    .colSpan4 {
+        grid-column: span 6;
+    }
+
+    .colSpan8 {
+        grid-column: span 6;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboardGrid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .colSpan4,
+    .colSpan8,
+    .colSpan12 {
+        width: 100%;
+    }
+}

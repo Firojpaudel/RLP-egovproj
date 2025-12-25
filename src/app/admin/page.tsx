@@ -99,7 +99,7 @@ export default function AdminDashboard() {
             </div>
 
             {/* Analytics Section */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 300px', gap: '32px', marginBottom: '48px', alignItems: 'start' }}>
+            <div className={styles.statsGrid}>
                 <Card style={{ padding: '32px', height: '100%', minHeight: '360px', boxShadow: '0 4px 20px rgba(0,0,0,0.03)', border: 'none' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '32px' }}>
                         <h3 className={styles.statLabel} style={{ fontSize: '18px', fontWeight: 600, color: '#1d1d1f' }}>Application Trends</h3>
@@ -122,25 +122,25 @@ export default function AdminDashboard() {
                 </Card>
 
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '16px' }}>
-                    <div style={{ background: 'white', borderRadius: '16px', padding: '24px', boxShadow: '0 4px 12px rgba(0,0,0,0.02)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                    <div className={styles.statCard}>
                         <div>
                             <p style={{ fontSize: '13px', color: '#86868b', fontWeight: 600, textTransform: 'uppercase' }}>Total</p>
                             <p style={{ fontSize: '32px', fontWeight: 700, color: '#1d1d1f', lineHeight: 1 }}>{stats.total}</p>
                         </div>
                     </div>
-                    <div style={{ background: 'white', borderRadius: '16px', padding: '24px', boxShadow: '0 4px 12px rgba(0,0,0,0.02)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                    <div className={styles.statCard}>
                         <div>
                             <p style={{ fontSize: '13px', color: '#f59e0b', fontWeight: 600, textTransform: 'uppercase' }}>Pending</p>
                             <p style={{ fontSize: '32px', fontWeight: 700, color: '#f59e0b', lineHeight: 1 }}>{stats.pending}</p>
                         </div>
                     </div>
-                    <div style={{ background: 'white', borderRadius: '16px', padding: '24px', boxShadow: '0 4px 12px rgba(0,0,0,0.02)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                    <div className={styles.statCard}>
                         <div>
                             <p style={{ fontSize: '13px', color: '#10b981', fontWeight: 600, textTransform: 'uppercase' }}>Approved</p>
                             <p style={{ fontSize: '32px', fontWeight: 700, color: '#10b981', lineHeight: 1 }}>{stats.approved}</p>
                         </div>
                     </div>
-                    <div style={{ background: 'white', borderRadius: '16px', padding: '24px', boxShadow: '0 4px 12px rgba(0,0,0,0.02)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                    <div className={styles.statCard}>
                         <div>
                             <p style={{ fontSize: '13px', color: '#ef4444', fontWeight: 600, textTransform: 'uppercase' }}>Rejected</p>
                             <p style={{ fontSize: '32px', fontWeight: 700, color: '#ef4444', lineHeight: 1 }}>{stats.rejected}</p>
