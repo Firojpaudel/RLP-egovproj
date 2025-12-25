@@ -23,13 +23,19 @@ export default function Home() {
               {t('heroSubtitle')}
             </p>
             <div className={styles.heroActions}>
-              <Link href="/services/renewal">
-                <Button size="lg" className={styles.heroBtnSecondary}>{t('renewLicense')}</Button>
+              <Link href="/login">
+                <Button size="lg" className={styles.heroBtnPrimary}>{t('login') || 'Citizen Login'}</Button>
               </Link>
-              <Link href="/status">
-                <Button size="lg" className={styles.heroBtnOutline}>
-                  {t('checkStatus')}
-                </Button>
+              <Link href="/admin/login">
+                <Button size="lg" className={styles.heroBtnSecondary}>{t('adminLogin') || 'Admin Login'}</Button>
+              </Link>
+            </div>
+            <div style={{ marginTop: '24px', display: 'flex', gap: '16px', justifyContent: 'center' }}>
+              <Link href="/services/renewal" style={{ fontSize: '14px', color: '#0071e3', textDecoration: 'underline' }}>
+                {t('renewLicense')}
+              </Link>
+              <Link href="/status" style={{ fontSize: '14px', color: '#0071e3', textDecoration: 'underline' }}>
+                {t('checkStatus')}
               </Link>
             </div>
           </div>
