@@ -87,7 +87,7 @@ export default function DashboardPage() {
                     <p className="text-body" style={{ marginTop: '8px' }}>Here is what's happening with your profile today.</p>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-text-secondary)', fontSize: '14px' }}>
-                    <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#10b981' }}></div>
+                    <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#10b981', flexShrink: 0 }}></div>
                     <span>System Operational</span>
                 </div>
             </div>
@@ -155,7 +155,7 @@ export default function DashboardPage() {
                             )}
                         </div>
 
-                        <div style={{ display: 'flex', gap: '10px' }}>
+                        <div className={styles.linkLicenseRow}>
                             <input
                                 type="text"
                                 placeholder="Add existing License No."
@@ -176,9 +176,9 @@ export default function DashboardPage() {
                     </div>
 
                     {/* Quick Actions */}
-                    <div className="apple-card" style={{ background: '#eef2ff', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '24px' }}>
+                    <div className={`apple-card ${styles.renewalCard}`}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-                            <div style={{ width: '48px', height: '48px', background: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#0071e3', boxShadow: '0 2px 8px rgba(0,0,0,0.05)' }}>
+                            <div style={{ width: '48px', height: '48px', minWidth: '48px', background: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#0071e3', boxShadow: '0 2px 8px rgba(0,0,0,0.05)', flexShrink: 0 }}>
                                 <RefreshCw size={24} />
                             </div>
                             <div>
@@ -186,8 +186,8 @@ export default function DashboardPage() {
                                 <p className="text-body" style={{ fontSize: '13px', marginTop: '2px', color: '#5b7db1' }}>Expiring soon? Start your application.</p>
                             </div>
                         </div>
-                        <Link href="/services/renewal">
-                            <Button style={{ borderRadius: '12px', padding: '10px 24px', boxShadow: '0 4px 12px rgba(0, 113, 227, 0.2)' }}>Apply Now</Button>
+                        <Link href="/services/renewal" style={{ width: '100%' /* helpful for mobile stretch */, maxWidth: 'max-content', margin: '0 auto' }}>
+                            <Button style={{ borderRadius: '12px', padding: '10px 24px', boxShadow: '0 4px 12px rgba(0, 113, 227, 0.2)', width: '100%' }}>Apply Now</Button>
                         </Link>
                     </div>
                 </div>

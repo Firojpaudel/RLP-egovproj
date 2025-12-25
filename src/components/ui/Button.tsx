@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-    variant?: 'primary' | 'secondary' | 'outline';
+    variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
     size?: 'sm' | 'md' | 'lg';
     isLoading?: boolean;
 }
@@ -25,11 +25,17 @@ export const Button = ({
         lg: { padding: '1rem 2rem', fontSize: '1.125rem' }
     };
 
+    const ghostStyle = variant === 'ghost' ? {
+        background: 'transparent',
+        color: 'var(--color-text-muted)',
+        border: '1px solid transparent'
+    } : {};
+
     return (
         <button
             className={`${baseClass} ${variantClass} ${className}`}
             disabled={isLoading || disabled}
-            style={{ ...sizeStyles[size], opacity: (isLoading || disabled) ? 0.7 : 1 }}
+            style={{ ...sizeStyles[size], ...ghostStyle, opacity: (isLoading || disabled) ? 0.7 : 1, ...props.style }}
             {...props}
         >
             {isLoading ? 'Loading...' : children}

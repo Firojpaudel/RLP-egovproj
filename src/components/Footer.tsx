@@ -9,7 +9,7 @@ export const Footer = () => {
                     <div className={styles.column}>
                         <h3>Department</h3>
                         <ul>
-                            <li><Link href="#">About DoTM</Link></li>
+                            <li><Link href="#">About RLP</Link></li>
                             <li><Link href="#">Leadership</Link></li>
                             <li><Link href="#">Contact Us</Link></li>
                             <li><Link href="#">Notices</Link></li>

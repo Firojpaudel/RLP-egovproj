@@ -104,3 +104,45 @@
         width: 100%;
     }
 }
+
+.renewalCard {
+    background: #eef2ff;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px;
+    border-radius: 12px;
+    /* moved from inline */
+}
+
+.linkLicenseRow {
+    display: flex;
+    gap: 10px;
+}
+
+@media (max-width: 600px) {
+    .renewalCard {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+        align-items: stretch;
+    }
+
+    .renewalCard>div {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .renewalCard h3 {
+        margin-top: 12px;
+    }
+
+    .linkLicenseRow {
+        flex-direction: column;
+    }
+
+    .linkLicenseRow button {
+        width: 100%;
+    }
+}

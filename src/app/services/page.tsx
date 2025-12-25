@@ -35,7 +35,15 @@ export default function ServicesPage() {
             }}>
                 {servicesList.map((s) => (
                     <Link href={s.href} key={s.id}>
-                        <Card hoverable className="glass" style={{ height: '100%', padding: '32px', border: 'none', background: 'var(--color-surface)' }}>
+                        <Card hoverable className="glass service-card-hover" style={{
+                            height: '100%',
+                            padding: '32px',
+                            border: '1px solid var(--color-border)',
+                            borderRadius: '24px',
+                            background: 'rgba(255, 255, 255, 0.7)',
+                            backdropFilter: 'blur(20px)',
+                            boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.02)'
+                        }}>
                             <span style={{ marginBottom: '24px', display: 'block' }}>{s.icon}</span>
                             <h3 style={{ fontSize: '21px', fontWeight: 600, marginBottom: '8px', color: 'var(--color-text-main)' }}>{s.title}</h3>
                             <p style={{ fontSize: '15px', color: 'var(--color-text-muted)', lineHeight: 1.5 }}>{s.desc}</p>

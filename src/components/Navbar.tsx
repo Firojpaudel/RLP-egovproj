@@ -92,12 +92,28 @@ export const Navbar = () => {
                             </Button>
                         </div>
                     ) : (
-                        <div className={styles.desktopAuth} style={{ display: 'flex', gap: '12px' }}>
+                        <div className={styles.desktopAuth} style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+                            <Link href="/admin/login">
+                                <Button
+                                    size="sm"
+                                    style={{
+                                        borderRadius: '999px',
+                                        background: 'transparent',
+                                        color: '#6e6e73',
+                                        border: 'none',
+                                        fontWeight: 500,
+                                        fontSize: '13px',
+                                        padding: '0 12px'
+                                    }}
+                                >
+                                    Admin
+                                </Button>
+                            </Link>
                             <Link href="/login">
-                                <Button variant="outline" size="sm">{t('login')}</Button>
+                                <Button variant="outline" size="sm" style={{ borderRadius: '999px' }}>{t('login')}</Button>
                             </Link>
                             <Link href="/register">
-                                <Button size="sm">{t('register')}</Button>
+                                <Button size="sm" style={{ borderRadius: '999px' }}>{t('register')}</Button>
                             </Link>
                         </div>
                     )}
@@ -127,6 +143,7 @@ export const Navbar = () => {
                         </button>
                     ) : (
                         <>
+                            <Link href="/admin/login" className={styles.mobileLink} onClick={() => setIsMenuOpen(false)}>{t('adminLogin') || 'Admin Login'}</Link>
                             <Link href="/login" className={styles.mobileLink} onClick={() => setIsMenuOpen(false)}>{t('login')}</Link>
                             <Link href="/register" className={styles.mobileLink} onClick={() => setIsMenuOpen(false)}>{t('register')}</Link>
                         </>

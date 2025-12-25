@@ -139,6 +139,16 @@ button {
   font-weight: 600;
 }
 
+@media (max-width: 768px) {
+  .title-large {
+    font-size: 36px;
+  }
+
+  .title-medium {
+    font-size: 28px;
+  }
+}
+
 .text-body {
   font-size: 17px;
   /* Standard Apple body size */
