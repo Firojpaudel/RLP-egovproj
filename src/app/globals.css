@@ -1,0 +1,232 @@
+:root {
+  /* Apple-esque San Francisco Palette (Restored) */
+  --color-primary: #0071e3;
+  /* Classic Apple Blue */
+  --color-primary-dark: #0077ED;
+  --color-secondary: #000000;
+  --color-accent: #f5f5f7;
+
+  --color-background: #ffffff;
+  --color-surface: rgba(255, 255, 255, 0.8);
+  --color-text-main: #1d1d1f;
+  --color-text-muted: #86868b;
+  --color-border: #d2d2d7;
+  --color-danger: #ef4444;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+
+  /* Typography */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-2xl: 80px;
+
+  /* Elevation */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.12);
+  --shadow-button: none;
+  /* Flat by default */
+  --shadow-button-hover: 0 4px 12px rgba(0, 113, 227, 0.2);
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-full: 980px;
+
+  /* Mesh Gradient (Subtle) */
+  --mesh-gradient: radial-gradient(at 0% 0%, hsla(210, 100%, 98%, 1) 0, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(220, 100%, 96%, 1) 0, transparent 50%),
+    radial-gradient(at 100% 100%, hsla(200, 100%, 98%, 1) 0, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(210, 100%, 96%, 1) 0, transparent 50%);
+
+  /* Animation Easing */
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --blur: blur(20px);
+}
+
+/* Dark Mode */
+/* Dark Mode */
+html.dark {
+  --color-background: #000000;
+  --color-surface: #1c1c1e;
+  --color-surface-hover: #2c2c2e;
+  --color-text-main: #f5f5f7;
+  --color-text-muted: #98989d;
+  --color-border: #38383a;
+  --color-accent: #1c1c1e;
+  --color-danger: #ff453a;
+  --color-success: #32d74b;
+  --color-warning: #ff9f0a;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.6);
+
+  --glass-bg: rgba(28, 28, 30, 0.72);
+
+  --mesh-gradient: radial-gradient(at 0% 0%, hsla(210, 100%, 10%, 1) 0, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(220, 100%, 8%, 1) 0, transparent 50%),
+    radial-gradient(at 100% 100%, hsla(200, 100%, 10%, 1) 0, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(210, 100%, 8%, 1) 0, transparent 50%);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text-main);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+/* Utilities */
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  /* Softer border */
+}
+
+.title-large {
+  font-size: 56px;
+  line-height: 1.05;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+.title-medium {
+  font-size: 40px;
+  line-height: 1.1;
+  font-weight: 600;
+}
+
+.text-body {
+  font-size: 17px;
+  /* Standard Apple body size */
+  line-height: 1.47;
+  font-weight: 400;
+  color: var(--color-text-main);
+}
+
+/* Button Components */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  font-weight: 500;
+  /* Regular weight */
+  font-size: 17px;
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  padding: 11px 22px;
+  /* Standard sizing */
+  letter-spacing: -0.01em;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+  /* No default shadow for flat look */
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+  /* Subtle lighting change, no movement */
+}
+
+.btn-secondary {
+  background-color: #1d1d1f;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #333336;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid #d2d2d7;
+  color: #0071e3;
+  /* Link color for outline */
+}
+
+.btn-outline:hover {
+  background: rgba(0, 113, 227, 0.05);
+  border-color: #0071e3;
+}
+
+/* Backgrounds & Animations */
+.mesh-bg {
+  background-color: #ffffff;
+  background-image: var(--mesh-gradient);
+  animation: meshFlow 20s ease-in-out infinite alternate;
+}
+
+.hero-gradient {
+  background: radial-gradient(circle at 50% -20%, #e0e7ff 0%, #f5f5f7 40%, rgba(255, 255, 255, 0) 70%);
+}
+
+.animate-enter {
+  animation: fadeIn 1s var(--ease-out-expo) forwards;
+}
+
+@keyframes meshFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
